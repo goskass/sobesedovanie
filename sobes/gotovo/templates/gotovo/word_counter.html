@@ -4,16 +4,16 @@
     <title>Word Counter</title>
 </head>
 <body>
-    <h1>Word Counter</h1>
+    <h1>Счетчик слов</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="file">Upload file:</label>
+        <label for="file">Загрузка файла:</label>
         <input type="file" id="file" name="file">
         <br>
-        <label for="word">Enter word:</label>
+        <label for="word">Введите слово:</label>
         <input type="text" id="word" name="word">
-        <button type="submit" name="action" value="count">Count</button>
-        <button type="submit" name="action" value="clear">Clear Memory</button>
+        <button type="submit" name="action" value="count">Подсчет</button>
+        <button type="submit" name="action" value="clear">Очистка памяти</button>
     </form>
     {% if count %}
     <p>Word '{{ searched_word }}' found {{ count }} times.</p>
