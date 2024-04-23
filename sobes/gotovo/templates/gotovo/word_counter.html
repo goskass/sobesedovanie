@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Counter</title>
+</head>
+<body>
+    <h1>Word Counter</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file">Upload file:</label>
+        <input type="file" id="file" name="file">
+        <br>
+        <label for="word">Enter word:</label>
+        <input type="text" id="word" name="word">
+        <button type="submit" name="action" value="count">Count</button>
+        <button type="submit" name="action" value="clear">Clear Memory</button>
+    </form>
+    {% if count %}
+    <p>Word '{{ searched_word }}' found {{ count }} times.</p>
+    {% endif %}
+</body>
+</html>
